@@ -1,4 +1,5 @@
 ﻿import React, { useState, useEffect } from 'react';
+import MovieImageArr from "./MovieImages.js";
 
 const RankItems = () => {
 
@@ -20,9 +21,13 @@ const RankItems = () => {
      // Conditional rendering: If items are available, display their titles
     return (
         <main>
+        <div class = "items-not=ranked">
             {
-                (items.length > 0) ? items.map((item) => <h3>{item.title}</h3>): <div>Loading...</div>
-            }
+                    (items.length > 0) ? items.map((item) =>
+                        <img id={`item-${item.id}`} src={MovieImageArr.find(o=>o.id === item.imageId)?.image} />
+                        ) : <div>Loading...</div>
+                }
+            </div>
         </main>
     )
 }
