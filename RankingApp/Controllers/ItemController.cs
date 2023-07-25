@@ -32,7 +32,7 @@ namespace RankingApp.Controllers
             new ItemModel{Id = 20, Title = "The Final Countdown", ImageId=20, Ranking=0,ItemType=2 }
         };
 
-        [HttpGet("itemType:int")]
+        [HttpGet("{itemType:int}")]
         public ItemModel[] Get(int itemType)
         {
             ItemModel[] items = Items.Where(i => i.ItemType == itemType).ToArray();
