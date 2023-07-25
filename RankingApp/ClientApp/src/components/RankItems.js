@@ -21,11 +21,13 @@ const RankItems = () => {
      // Conditional rendering: If items are available, display their titles
     return (
         <main>
-        <div class = "items-not=ranked">
+        <div className = "items-not=ranked">
             {
                     (items.length > 0) ? items.map((item) =>
+                    <div className = "unranked-cell">
                         <img id={`item-${item.id}`} src={MovieImageArr.find(o=>o.id === item.imageId)?.image} />
-                        ) : <div>Loading...</div>
+                    </div>
+                    ) : <div>Loading...</div>
                 }
             </div>
         </main>
