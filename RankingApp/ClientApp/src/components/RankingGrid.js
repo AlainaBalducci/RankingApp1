@@ -1,5 +1,5 @@
 ﻿
-const RankingGrid = ({ items, imgArr }) => {
+const RankingGrid = ({ items, imgArr, drag, allowDrop, drop }) => {
     // Arrays to store cell collections for each row in the grid
     const rankingGrid = [];
     const cellCollectionTop = [];
@@ -14,7 +14,10 @@ const RankingGrid = ({ items, imgArr }) => {
             // Find the item with matching ranking
             let item = items.find(o => o.ranking === rankNum);
             // Push a cell with a unique ID for each ranking item
-            cellCollection.push(<div id={`rank-${rankNum}`} className="rank-cell"></div>);
+            cellCollection.push(<div id={`rank-${rankNum}`} onDrop={drop} onDragOver={allowDrop} className="rank-cell">
+                {(item != null) ? <img id={`item-${item.id}`} src={imgArr.find(o => o.id === item.imageId)?.image} draggable="true" onDragStart={drag} />
+                    : null}
+            </div>);
         }
         else {
             // Push a row label cell when rankNum is 0

@@ -17,11 +17,12 @@ body {
     font-family: Arial, Helvetica, sans-serif
 }
 
-main {
-/*    display: flex;*/
-/*    align-items: center;
-    flex-direction: column;*/
-}
+/*tier grid and movies were all in the center in one column with this css*/
+/*main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}*/
 
 .items-not-ranked {
     display: flex;
@@ -35,10 +36,10 @@ main {
     margin-left: 3px;
 }
 
-    .unranked-cell img {
+.unranked-cell img {
         width: 100%;
         height: 100%;
-    }
+}
 
 .ranking {
     width: 80px;
