@@ -25,7 +25,7 @@ const RankingGrid = ({ items, imgArr }) => {
     }
 
     // Function to create cells for a specific row in the grid
-    function createCellsForRow() {
+    function createCellsForRow(rowNum) {
         let rankNum = 0;
         let currCollection = [];
         let label = "";
